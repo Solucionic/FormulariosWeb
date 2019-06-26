@@ -9,6 +9,9 @@
 	if (Redireccion==true){
 		AlertaGracias.setAttribute(style="display:inline;");
 	}
+	else{
+		AlertaGracias.setAttribute(style="display:none;");
+	}
 }
 
 function getParametrosPorNombre(name, href) {
@@ -127,8 +130,8 @@ function getParametrosPorNombre(name, href) {
 	</td></tr>
    </table>
    <div class="alert alert-light" role="alert" style='width:250px' align="center";   >
-  <h6 id="Alerta" style="display: none;">¡Gracias! Mensaje enviado.</h6>
-  <script type="text/javascript">RedireccionMensaje()</script>
+  <h6 id="Alerta" >¡Gracias! Mensaje enviado.</h6>
+  
 </div>
 	<script>
  	  var mndFileds=new Array('First Name','Last Name','Email','Phone','LEADCF4','LEADCF3','LEADCF51');
