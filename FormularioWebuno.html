@@ -1,6 +1,26 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+	<script type="text/javascript">
 
+	
+ 	   var Redireccion = getParametrosPorNombre("redi", window.location);
+
+
+
+function getParametrosPorNombre(name, href) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(href);
+    if (results[1] == "true")
+        return "true";
+    else
+        return "false";
+}
+
+	</script>
+</head>
 <body style="overflow-x:hidden;overflow-y:hidden"> 
 
 
@@ -16,7 +36,7 @@
  <input type='hidden' name='zc_gad' id='zc_gad' value=''></input> 
  <input type='text' style='display:none;' name='xmIwtLD' value='2cac25fd9c4bc0c9362d0d7e328b874dde0208cdbf6b4dab96632af06cf64a0b'></input> 
  <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
- <input type='text' style='display:none;' name='returnURL' value='https://solucionic.github.io/FormulariosWeb/FormularioWebuno' > </input>
+ <input type='text' style='display:none;' name='returnURL' value='https://solucionic.github.io/FormulariosWeb/FormularioWebuno?redi=true' > </input>
 	 <!-- Do not remove this code. -->
 	<style>
 		tr , td { 
@@ -72,13 +92,21 @@
 	<script>
  	  var mndFileds=new Array('Company','First Name','Last Name','Email','Phone');
  	  var fldLangVal=new Array('Empresa','Nombre','Apellidos','Email','No. Teléfono'); 
+ 	  var AlertaGracias = document.getElementById("Alerta");
+
+ 	   	  
+	if (Redireccion=="true"){
+		AlertaGracias.setAttribute("style","display: inline;");
+	}
+	else{
+		AlertaGracias.setAttribute("style","display: none;");
+	}
 		var name='';
-		var email='';
+		var email=''; 
+		
 
 	 
  	  function checkMandatory3838020000000398031() {
- 	  		var AlertaGracias = document.getElementById("Alerta");
- 	  	AlertaGracias.style.display = 'inline';
 		for(i=0;i<mndFileds.length;i++) {
 		  var fieldObj=document.forms['WebToLeads3838020000000398031'][mndFileds[i]];
 		  if(fieldObj) {
@@ -90,7 +118,6 @@
 				 return false;
 				} 
 			alert(fldLangVal[i] +' cannot be empty.'); 
-			AlertaGracias.style.display = 'none'
    	   	  	  fieldObj.focus();
    	   	  	  return false;
 			}  else if(fieldObj.nodeName=='SELECT') {
