@@ -19,7 +19,7 @@
 	<input type='text' style='display:none;' name='xmIwtLD' value='2cac25fd9c4bc0c9362d0d7e328b874df625e6a22e904606ba529c7074e241c8'/>
 	<input type='text' style='display:none;'  name='actionType' value='TGVhZHM='/>
 
-	<input type='text' style='display:none;' name='returnURL' value='https://solucionic.github.io/FormulariosWeb/FormularioWebdos.html' /> 
+	<input type='text' style='display:none;' name='returnURL' value='https://solucionic.github.io/FormulariosWeb/FormularioWebdos.html?redi=true' /> 
 	 <!-- Do not remove this code. -->
 	<style>
 		tr , td { 
@@ -104,20 +104,39 @@
    </table>
    <div class="alert alert-light" role="alert" style='width:250px' align="center";   >
   <h6 id="Alerta" style="display: none;">¡Gracias! Mensaje enviado.</h6>
+  <script type="text/javascript">RedireccionMensaje()</script>
 </div>
 	<script>
  	  var mndFileds=new Array('First Name','Last Name','Email','Phone','LEADCF4','LEADCF3','LEADCF51');
  	  var fldLangVal=new Array('Nombre','Apellidos','Correo electrónico','Teléfono','¿Quién es su socio SAP?','¿Qué versión de SAP tiene?','¿Cuántos empleados tiene?');
  	  var  alertas = false;
+ 	  var AlertaGracias = document.getElementById("Alerta");
+ 	  var Redireccion = getParametrosPorNombre("redi", window.location);
 		var name='';
 		var email=''; 
 		var count = 0;
-		function MostrarMensaje() {
-			
-				
-	 
-	  }
+
+function RedireccionMensaje(){
+	if (Redireccion==true){
+		AlertaGracias.setAttribute(style="display:inline;");
+	}
+}
+
+	
+
+
   
+function getParametrosPorNombre(name, href) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(href);
+    if (results == null)
+        return "";
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 function disableSubmitwhileReset()
 	{		
 	var submitbutton = document.getElementById('formsubmit');
@@ -178,8 +197,7 @@ submitbutton.removeAttribute('style','opacity: none;');
 }
 
  	  function checkMandatory3838020000000235033() {
- 	  	var AlertaGracias = document.getElementById("Alerta");
- 	  	AlertaGracias.style.display = 'inline';
+ 	  	
 		for(i=0;i<mndFileds.length;i++) {
 		  var fieldObj=document.forms['WebToLeads3838020000000235033'][mndFileds[i]];
 		  if(fieldObj) {
@@ -192,7 +210,7 @@ submitbutton.removeAttribute('style','opacity: none;');
 				 return false;
 				} 
 			alert(fldLangVal[i] +' no puede estar vacío.'); 
-			AlertaGracias.style.display = 'none'
+			
    	   	  	  fieldObj.focus();
    	   	  	  return false;
 			}  else if(fieldObj.nodeName=='SELECT') {
