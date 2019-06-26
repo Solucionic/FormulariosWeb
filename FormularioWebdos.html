@@ -1,5 +1,29 @@
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+	<script type="text/javascript">
+		var AlertaGracias = document.getElementById("Alerta");
+ 	  var Redireccion = getParametrosPorNombre("redi", window.location);
+
+ 	  function RedireccionMensaje(){
+	if (Redireccion==true){
+		AlertaGracias.setAttribute(style="display:inline;");
+	}
+}
+
+function getParametrosPorNombre(name, href) {
+    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+    var regexS = "[\\?&]" + name + "=([^&#]*)";
+    var regex = new RegExp(regexS);
+    var results = regex.exec(href);
+    if (results == null)
+        return "";
+    else
+        return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+	</script>
+</head>
 
 <body style="overflow-x:hidden"> 
 
@@ -110,32 +134,12 @@
  	  var mndFileds=new Array('First Name','Last Name','Email','Phone','LEADCF4','LEADCF3','LEADCF51');
  	  var fldLangVal=new Array('Nombre','Apellidos','Correo electrónico','Teléfono','¿Quién es su socio SAP?','¿Qué versión de SAP tiene?','¿Cuántos empleados tiene?');
  	  var  alertas = false;
- 	  var AlertaGracias = document.getElementById("Alerta");
- 	  var Redireccion = getParametrosPorNombre("redi", window.location);
+ 	  
 		var name='';
 		var email=''; 
 		var count = 0;
 
-function RedireccionMensaje(){
-	if (Redireccion==true){
-		AlertaGracias.setAttribute(style="display:inline;");
-	}
-}
 
-	
-
-
-  
-function getParametrosPorNombre(name, href) {
-    name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-    var regexS = "[\\?&]" + name + "=([^&#]*)";
-    var regex = new RegExp(regexS);
-    var results = regex.exec(href);
-    if (results == null)
-        return "";
-    else
-        return decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 function disableSubmitwhileReset()
 	{		
