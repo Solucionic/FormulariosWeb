@@ -61,18 +61,24 @@
 													<td> <textarea class="form-control" name='LEADCF5' maxlength='2000'  style='width:240px;'>&nbsp;</textarea></td></tr>
 
 	<tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit' >Enviar</button></input>  </td>
+		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit' onclick="MostrarMensaje()" >Enviar</button></input>  </td>
 
 	</tr>
-<tr>
-		<td style="width: 250px";> <h5>¡Gracias! Mensaje enviado.</h5> </td></tr></table>
-
+</table>
+<div class="alert alert-light" role="alert" style='width:250px' align="center";   >
+  <h6 id="Alerta" style="display: none;">¡Gracias! Mensaje enviado.</h6>
+</div>
 	
 	<script>
  	  var mndFileds=new Array('Company','First Name','Last Name','Email','Phone');
  	  var fldLangVal=new Array('Empresa','Nombre','Apellidos','Email','No. Teléfono'); 
 		var name='';
 		var email='';
+
+	  function MostrarMensaje() {
+	  var AlertaGracias = document.getElementById("Alerta");
+	  AlertaGracias.style.display = 'inline'
+	  }
 
  	  function checkMandatory3838020000000398031() {
 		for(i=0;i<mndFileds.length;i++) {

@@ -16,7 +16,7 @@
  <input type='hidden' name='zc_gad' id='zc_gad' value=''></input> 
  <input type='text' style='display:none;' name='xmIwtLD' value='2cac25fd9c4bc0c9362d0d7e328b874dde0208cdbf6b4dab96632af06cf64a0b'></input> 
  <input type='text'  style='display:none;' name='actionType' value='TGVhZHM='></input>
- <input type='text' style='display:none;' name='returnURL' value='https://solucionic.com/gracias' > </input>
+ 
 	 <!-- Do not remove this code. -->
 	<style>
 		tr , td { 
@@ -61,16 +61,25 @@
 													<td> <textarea class="form-control" name='LEADCF5' maxlength='2000'  style='width:240px;'>&nbsp;</textarea></td></tr>
 
 	<tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit' >Enviar</button></input>  </td></tr>
-		<tr>
-		<td style="width: 250px";> <h5>¡Gracias! Mensaje enviado.</h5> </td></tr>
+		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit' onclick="MostrarMensaje()">Enviar</button></input>  </td></tr>
 	</table>
+
+<div class="alert alert-light" role="alert" style='width:250px' align="center";   >
+  <h6 id="Alerta" style="display: none;">¡Gracias! Mensaje enviado.</h6>
+</div>
 
 	<script>
  	  var mndFileds=new Array('Company','First Name','Last Name','Email','Phone');
  	  var fldLangVal=new Array('Empresa','Nombre','Apellidos','Email','No. Teléfono'); 
 		var name='';
 		var email='';
+
+	  function MostrarMensaje() {
+	  var AlertaGracias = document.getElementById("Alerta");
+	  AlertaGracias.style.display = 'inline'
+
+
+	  }
 
  	  function checkMandatory3838020000000398031() {
 		for(i=0;i<mndFileds.length;i++) {
@@ -82,7 +91,7 @@
 				 alert('Please select a file to upload.'); 
 				 fieldObj.focus(); 
 				 return false;
-				} 
+				}
 			alert(fldLangVal[i] +' cannot be empty.'); 
    	   	  	  fieldObj.focus();
    	   	  	  return false;
