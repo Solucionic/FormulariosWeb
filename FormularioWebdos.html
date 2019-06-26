@@ -2,8 +2,9 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
 	<script type="text/javascript">
-		var AlertaGracias = document.getElementById("Alerta");
- 	  var Redireccion = getParametrosPorNombre("redi", window.location);
+
+	var AlertaGracias = document.getElementById("Alerta");
+ 	   var Redireccion = getParametrosPorNombre("redi", window.location);
 
  	  function RedireccionMensaje(){
 	if (Redireccion==true){
@@ -12,6 +13,7 @@
 	else{
 		AlertaGracias.setAttribute(style="display:none;");
 	}
+
 }
 
 function getParametrosPorNombre(name, href) {
@@ -28,7 +30,7 @@ function getParametrosPorNombre(name, href) {
 	</script>
 </head>
 
-<body style="overflow-x:hidden"> 
+<body style="overflow-x:hidden" onload="RedireccionMensaje()"  > 
 
 
 <!-- Note :
