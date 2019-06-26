@@ -3,18 +3,10 @@
 <head>
 	<script type="text/javascript">
 
-	var AlertaGracias = document.getElementById("Alerta");
+	
  	   var Redireccion = getParametrosPorNombre("redi", window.location);
 
- 	  function RedireccionMensaje(){
-	if (Redireccion==true){
-		AlertaGracias.setAttribute(style="display:inline;");
-	}
-	else{
-		AlertaGracias.setAttribute(style="display:none;");
-	}
 
-}
 
 function getParametrosPorNombre(name, href) {
     name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
@@ -132,14 +124,22 @@ function getParametrosPorNombre(name, href) {
 	</td></tr>
    </table>
    <div class="alert alert-light" role="alert" style='width:250px' align="center";   >
-  <h6 id="Alerta" >¡Gracias! Mensaje enviado.</h6>
+  <h6 id="Alerta"  style="display:none;">¡Gracias! Mensaje enviado.</h6>
   
 </div>
 	<script>
  	  var mndFileds=new Array('First Name','Last Name','Email','Phone','LEADCF4','LEADCF3','LEADCF51');
  	  var fldLangVal=new Array('Nombre','Apellidos','Correo electrónico','Teléfono','¿Quién es su socio SAP?','¿Qué versión de SAP tiene?','¿Cuántos empleados tiene?');
  	  var  alertas = false;
- 	  
+ 	  var AlertaGracias = document.getElementById("Alerta");
+
+ 	   	  
+	if (Redireccion==true){
+		AlertaGracias.setAttribute(style="display:inline;");
+	}
+	else{
+		AlertaGracias.setAttribute(style="display:none;");
+	}
 		var name='';
 		var email=''; 
 		var count = 0;
