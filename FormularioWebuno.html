@@ -61,7 +61,7 @@
 													<td> <textarea class="form-control" name='LEADCF5' maxlength='2000'  style='width:240px;'>&nbsp;</textarea></td></tr>
 
 	<tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit' onclick="MostrarMensaje()" >Enviar</button></input>  </td>
+		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit'  >Enviar</button></input>  </td>
 
 	</tr>
 </table>
@@ -75,12 +75,10 @@
 		var name='';
 		var email='';
 
-	  function MostrarMensaje() {
-	  var AlertaGracias = document.getElementById("Alerta");
-	  AlertaGracias.style.display = 'inline'
-	  }
-
+	 
  	  function checkMandatory3838020000000398031() {
+ 	  		var AlertaGracias = document.getElementById("Alerta");
+ 	  	AlertaGracias.style.display = 'inline';
 		for(i=0;i<mndFileds.length;i++) {
 		  var fieldObj=document.forms['WebToLeads3838020000000398031'][mndFileds[i]];
 		  if(fieldObj) {
@@ -92,6 +90,7 @@
 				 return false;
 				} 
 			alert(fldLangVal[i] +' cannot be empty.'); 
+			AlertaGracias.style.display = 'none'
    	   	  	  fieldObj.focus();
    	   	  	  return false;
 			}  else if(fieldObj.nodeName=='SELECT') {

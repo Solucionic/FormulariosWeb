@@ -11,7 +11,7 @@
    - It is important that you test the modified form before going live.-->
 <div id='crmWebToEntityForm' style='width:600px;margin:auto;'>
    <META HTTP-EQUIV ='content-type' CONTENT='text/html;charset=UTF-8'>
-   <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads3838020000000235033 method='POST' onSubmit='javascript:document.charset="UTF-8"; return checkMandatory3838020000000235033()' accept-charset='UTF-8'>
+   <form action='https://crm.zoho.com/crm/WebToLeadForm' name=WebToLeads3838020000000235033 method='POST' onSubmit='javascript:document.charset="UTF-8";  return checkMandatory3838020000000235033()' accept-charset='UTF-8'>
 
 	 <!-- Do not remove this code. -->
 	<input type='text' style='display:none;' name='xnQsjsdp' value='29a1d1f7002688d306c5faa864cd71e7ab1a03999f57e28c9114c1bd5894b8fe'/>
@@ -95,7 +95,7 @@
 
 	<tr><td  colspan='2'><div class='dIB vat mT2' align='left' style='color: rgb(0, 0, 0); font-size: 12px; font-family: sans-serif;display: inline-block;vertical-align: top;'><div class='displayPurpose  f13'><label class='newCustomchkbox-md dIB w100per'><input autocomplete='off' onclick='disableSubmit()' id='privacyTool' type='checkbox' name='privacyTool'><span class='chkbxIcon'></span></label></div></div><div  class='fw200 dIB vat mL5' style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;vertical-align: top;margin-top: 3px;line-height: 14px;display: inline-block;color:black'>Acepto la&nbsp;<a href='https://www.solucionic.com/aviso-de-privacidad' title='https://www.solucionic.com/aviso-de-privacidad' target='_blank'>Política de privacidad</a>&nbsp; .
 <br /><br /><br />
-	<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" disabled id='formsubmit' type='submit' onclick="MostrarMensaje()" >Enviar</button></div>
+	<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" disabled id='formsubmit' type='submit'  >Enviar</button></div>
 
 
 
@@ -108,11 +108,14 @@
 	<script>
  	  var mndFileds=new Array('First Name','Last Name','Email','Phone','LEADCF4','LEADCF3','LEADCF51');
  	  var fldLangVal=new Array('Nombre','Apellidos','Correo electrónico','Teléfono','¿Quién es su socio SAP?','¿Qué versión de SAP tiene?','¿Cuántos empleados tiene?');
+ 	  var  alertas = false;
 		var name='';
 		var email=''; 
+		var count = 0;
 		function MostrarMensaje() {
-	  var AlertaGracias = document.getElementById("Alerta");
-	  AlertaGracias.style.display = 'inline'
+			
+				
+	 
 	  }
   
 function disableSubmitwhileReset()
@@ -175,6 +178,8 @@ submitbutton.removeAttribute('style','opacity: none;');
 }
 
  	  function checkMandatory3838020000000235033() {
+ 	  	var AlertaGracias = document.getElementById("Alerta");
+ 	  	AlertaGracias.style.display = 'inline';
 		for(i=0;i<mndFileds.length;i++) {
 		  var fieldObj=document.forms['WebToLeads3838020000000235033'][mndFileds[i]];
 		  if(fieldObj) {
@@ -182,10 +187,12 @@ submitbutton.removeAttribute('style','opacity: none;');
 			 if(fieldObj.type =='file')
 				{ 
 				 alert('Seleccione un archivo para cargar.'); 
+				 
 				 fieldObj.focus(); 
 				 return false;
 				} 
 			alert(fldLangVal[i] +' no puede estar vacío.'); 
+			AlertaGracias.style.display = 'none'
    	   	  	  fieldObj.focus();
    	   	  	  return false;
 			}  else if(fieldObj.nodeName=='SELECT') {
@@ -200,12 +207,15 @@ submitbutton.removeAttribute('style','opacity: none;');
 				fieldObj.focus();
 				return false;
 			   } 
+
 			 } 
 			 try {
 			     if(fieldObj.name == 'Last Name') {
 				name = fieldObj.value;
  	 	 	    }
-			} catch (e) {}
+			} catch (e) {
+				
+			}
 		    }
 		}
 	     }
