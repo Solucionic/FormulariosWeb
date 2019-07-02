@@ -1,7 +1,16 @@
-
+﻿
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
-	<script type="text/javascript">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75297111-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-75297111-1');
+</script>	
+<script type="text/javascript">
 
 	
  	   var Redireccion = getParametrosPorNombre("redi", window.location);
@@ -81,7 +90,7 @@ function getParametrosPorNombre(name, href) {
 													<td> <textarea class="form-control" name='LEADCF5' maxlength='2000'  style='width:240px;'>&nbsp;</textarea></td></tr>
 
 	<tr><td colspan='2' style='text-align:center; padding-top:15px;font-size:12px;'>
-		<button  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit' type='submit'  >Enviar</button></input>  </td>
+		<button onclick="gtag('event', 'send', {'event_category': 'formulario','event_action': 'enviar'});"  style='width:240px;' class="btn btn-secondary btn-lg btn-block" id='formsubmit'   >Enviar</button></input>  </td>
 
 	</tr>
 </table>

@@ -1,9 +1,17 @@
-
+﻿
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <head>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75297111-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'UA-75297111-1');
+</script>
 	<script type="text/javascript">
 
-	
  	   var Redireccion = getParametrosPorNombre("redi", window.location);
 
 
@@ -125,7 +133,7 @@ function getParametrosPorNombre(name, href) {
 
 	<tr><td  colspan='2'><div class='dIB vat mT2' align='left' style='color: rgb(0, 0, 0); font-size: 12px; font-family: sans-serif;display: inline-block;vertical-align: top;'><div class='displayPurpose  f13'><label class='newCustomchkbox-md dIB w100per'><input autocomplete='off' onclick='disableSubmit()' id='privacyTool' type='checkbox' name='privacyTool'><span class='chkbxIcon'></span></label></div></div><div  class='fw200 dIB vat mL5' style='nowrap:nowrap;text-align:left;font-size:12px;font-family:Arial;vertical-align: top;margin-top: 3px;line-height: 14px;display: inline-block;color:black'>Acepto la&nbsp;<a href='https://www.solucionic.com/aviso-de-privacidad' title='https://www.solucionic.com/aviso-de-privacidad' target='_blank'>Política de privacidad</a>&nbsp; .
 <br /><br /><br />
-	<button   class="btn btn-secondary btn-lg btn-block" disabled id='formsubmit' type='submit'  >Enviar</button></div>
+	<button  onclick="gtag('event', 'send', {'event_category': 'formularioContacto','event_action': 'enviar'});" class="btn btn-secondary btn-lg btn-block" disabled id='formsubmit'   >Enviar</button></div>
 
 
 
